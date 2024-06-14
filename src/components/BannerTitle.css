@@ -1,0 +1,41 @@
+.shop{
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/cart-page-header-img.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.shopmenu ul{
+   display: flex;
+   list-style: none;
+    justify-content: center;
+    align-items: center;
+
+}
+.shop-center{
+   text-align: center;
+   
+}
+.shop-center h2{
+    text-align: center;
+    font-size: 40px;
+     font-weight: 700;
+     color: #ffff;
+ }
+.shop-center ul{
+    justify-content: center;
+    gap: 32px;
+color: #81c408;
+ }
+ .shop-title{
+    margin-left: 10%;
+    margin-top: 40px;
+ }
+ .shopmenu ul li a{
+    text-decoration: none;
+    color: #81c408;
+ }

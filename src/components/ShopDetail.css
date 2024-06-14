@@ -1,0 +1,132 @@
+.shop-detail {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 61px;
+    
+}
+.btn-qty{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0px;
+}
+.btn-qty button{
+    padding: 9px 11px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: #747d88;
+    border: solid 1px #8e8f00;
+}
+.add-to-cart{
+    padding: 10px 50px;
+    border: solid 1px #8e8f00;
+    border-radius: 100px;   
+    margin-top: 10px;
+}
+.img-container{
+    border: solid 1px #dee2e6;
+    border-radius: 10px;
+}
+.nav-tabs{
+    gap: 40px;
+}
+.navdescription{
+    margin-top: 40px;
+}
+
+.navdescription ul li{
+   padding: 9px;
+}
+.table tr td{
+    padding: 10px;
+}
+.showtab{
+    display: block !important;
+    max-height: 680px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#myTabContent ,#myTabContent2{
+    display: none;
+    margin: 30px 0px;
+
+ 
+}
+.review{
+    padding: 10px 0px;
+    border-bottom: solid 2px #e7ebe5;
+}
+.activecolor{
+  
+    border-bottom: solid 3px #59df16 !important;
+}
+.inputitems{
+     display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0px
+}
+.inputitems input{
+    padding: 10px 210px 15px 13px;
+    border-radius: 12px;
+    /* outline: none !important; */
+    border: none !important;
+    outline: solid 1px rgb(59, 219, 59) !important;
+    margin-top: 10px;
+
+}
+form textarea{
+    width: 96%;
+    padding: 10px 10px;
+    height: 218px;
+    border: none;
+    outline: solid 1px rgb(59, 219, 59) !important;
+    border-radius: 10px;
+
+}
+.starRate{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+.submitForm{
+display: flex;
+justify-content: end;
+align-items: center;
+
+}
+.submitForm input{
+    padding: 10px 90px;
+    border-radius: 100px;
+}
+form .row {
+    margin: 39px 25px;
+}
+.slider-corusel{
+    position: relative;
+}
+.corusel{
+    display: flex;
+    position: relative;
+    width: 100%;
+    user-select: none;
+}
+.corusel-main{
+    overflow: hidden;
+    user-select: none;
+}
+.coruselActive{
+    user-select: none;
+    transition: all 1.5s ease 0s;
+}
+.corusel .col-lg-3{
+    user-select: none;
+    padding: 0px 10px;
+ 
+}

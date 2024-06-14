@@ -1,0 +1,53 @@
+.Sigin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.sigin-btn button{
+    background-color: #81c408;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    padding: 9px 60px;
+}
+.sigin-btn button:nth-child(2):hover,button:nth-child(1):hover{
+    background-color: #c40808;
+ 
+
+}
+.sigin-btn{
+    position: relative;
+}
+.sigin-btn button:nth-child(2){
+    position: absolute;
+     left: 122px;
+  background-color: blue;
+}
+.sigin-form input{
+    display: block;
+    padding: 5px 95px 5px 10px;
+    margin: 15px 0px;
+    border-radius: 10px;
+    border: solid 1px #81c408;
+}
+.sigin-form  button{
+    background-color: #81c408;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 115px;
+}
+.sigin-sub h2{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.sigin-sub{
+    padding: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+   
+}
+.ajithpool{
+    height: 100vh;
+}   

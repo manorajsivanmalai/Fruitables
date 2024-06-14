@@ -1,0 +1,129 @@
+.img-banner {
+    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url('../img/hero-img.jpg'); 
+    /* background-image: url('../img/hero-img.jpg'); */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+
+
+}
+
+.bnrtext h1 {
+    font-weight: 900;
+    color: #81c408 !important;
+}
+
+.bnrtext {
+    color: #81c408 !important;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    position: relative;
+    margin-top: 8%;
+}
+
+.bnrtext input {
+    border-radius: 100px;
+    padding: 20px 230px;
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 230px;
+   text-align: start;
+}
+
+.bnrtext button {
+    padding: 21px 130px;
+    position: absolute;
+    right: 8%;
+    border-radius: 100px;
+    color: #fff;
+    border-color: #ffb524 !important;
+    background-color: #81c408;
+}
+.img-corousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+.img-corousel img{
+    border-radius: 10px;
+    background-color: #ffb524 !important
+}
+.hero-container{
+    position: relative;
+    
+}
+.hero-container a{
+    position: absolute;
+    left: 23%;
+    top: 50%;
+    background-color: #ffb524;
+    padding: 6px 90px;
+    border-radius: 10px;
+}
+.arrow{
+    position:absolute;
+    top: 50%;
+    width: 100%;
+    font-weight: 300;
+    font-size: 26px;
+    
+}
+.arrow .left-arrow{
+    position: absolute;
+    left: 3px;
+    background-color:#81c408 ;
+    border-radius: 50%;
+    padding: 10px 18px;
+}
+.arrow .right-arrow{
+    position: absolute;
+    right: 3px;
+    background-color:#81c408 ;
+    border-radius: 50%;
+    padding: 10px 18px;
+}
+.icon-container{
+    background-color: orange;
+    padding: 40px;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #fff;
+}
+.services{
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 26px;
+}
+.sortProd{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2   00px 0px 30px 0px;
+}
+.btnsort{
+    display: contents;
+}
+.btnsort button{
+    padding:10px 30px;
+    border-radius: 100px;
+    border: solid 1px #81c408;
+}
+.btnsort button:hover{
+   background-color: #ffb524;
+    border: solid 1px #848681;
+}
+.products{
+   margin-top: 20px;
+}

@@ -1,0 +1,80 @@
+{
+  "details": [
+    {
+      "name": "apple",
+      "price": 10,
+      "id": "ad41"
+    },
+    {
+      "name": "banana",
+      "price": 15,
+      "id": "15b7"
+    },
+    {
+      "name": "orange",
+      "price": 20,
+      "id": "b009"
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "id": "6a93"
+    },
+    {
+      "id": "c1a9",
+      "username": "aaaaaaaa",
+      "password": "aaaaaaaaa"
+    },
+    {
+      "id": "6c01",
+      "username": "manoraj",
+      "password": "6383685682"
+    }
+  ],
+  "reviwes": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "date": "10/01/2020",
+      "rate": 3,
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dignissimos?"
+    },
+    {
+      "id": "2",
+      "name": "John Doe",
+      "date": "10/01/2020",
+      "rate": 4,
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dignissimos?"
+    },
+    {
+      "id": "3",
+      "name": "John Doe",
+      "date": "10/01/2020",
+      "rate": 5,
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, dignissimos?"
+    },
+    {
+      "id": "4",
+      "name": "sd",
+      "date": "May 31, 2024",
+      "rate": 5,
+      "content": "wefwefwef"
+    },
+    {
+      "id": "5",
+      "name": "Manoraj",
+      "date": "May 31, 2024",
+      "rate": 4,
+      "content": "goood "
+    },
+    {
+      "id": "6",
+      "name": "ajith",
+      "date": "May 31, 2024",
+      "rate": 5,
+      "content": "fresh and healthy products\n"
+    }
+  ]
+}

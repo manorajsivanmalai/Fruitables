@@ -1,0 +1,108 @@
+.side-menu{
+    margin-top: 50px;
+}
+
+.side-menu h3{
+    margin-bottom: 20px;
+}
+.categories{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #81c408;
+}
+.icon-category-name{
+    display: flex;
+}
+.icon-category-name h6{
+ padding-left: 20px;   
+
+}
+.price-range input{
+    width: 100%;
+}
+.checkbox-label {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.checkbox-label input{
+
+    margin-right: 24px;
+}
+/* styles.css */
+
+.custom-checkbox {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 17px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+    border-radius: 50%; /* Makes the checkbox rounded */
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+    background-color: #aaa;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.Additional-sort,.price-range,.featured-product{
+    margin-top: 30px;
+}
+.product img{
+    width: 98px;
+}
+.btn-show{
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 126px;
+}
+.bannerfruits{
+    margin-top: 20px;
+}
+.star{
+    text-align: center;
+}

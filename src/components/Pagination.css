@@ -1,0 +1,21 @@
+.page-btn{
+    padding: 15px 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: #ffff;
+    border: #81C408 1px solid;
+}
+.pagination{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+.page-btn:hover{
+background-color: #81C408;
+}
+.active{
+    background-color: #81C408;
+}

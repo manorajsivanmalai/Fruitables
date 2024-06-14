@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+.navsections-contact{
+    background-color: #81c408;
+    padding: 15px;
+    border-radius: 230px 100px;
+    margin-bottom: 13px !important;
+    justify-content: space-around;
+}
+.navsections-contact ul{
+   display: flex;
+   list-style: none;
+   gap: 40px;
+}
+
+.navbar{
+    /* padding: 25px !important; */
+    font-size: 16px;
+    position: sticky !important;
+    top: 0px !important;
+    background-color: #fff;
+    z-index: 1;
+    
+}
+
+.navbar a h2{
+  color: #81c408 ;
+  }
+
+.menubar1,.menubar2{
+    display: flex;
+    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle
+}
+
+.navsections{
+    position: sticky;
+    top: 10px;
+}
+.search{
+  
+  border: solid 1px #81c408;
+  padding: 10px;
+  border-radius: 50%; /* color: #81c408; */
+  color: #81c408;
+
+}
+.menubar1 li a svg,.menubar2 li a svg{
+   font-size: 23px;
+   font-weight: 900;
+}
+.menubar1 ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+}
+.menubar2 ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+}
+.menubar1 li a,.menubar2 li a {
+  text-decoration: none;
+  color: #81c408 ;
+ }
+ .cardCountmain{
+  position: relative;
+ }
+ .cardcount{
+  position: absolute;
+  top: -9px;
+  right: -10px;
+  background-color: #81c408;
+  color: #fff;
+  padding: 4px 6px;
+  border-radius: 61%;
+  font-size: 10px;
+ }
+ .user{
+  color: #81c408;
+ }
+ .navsections-contact{
+display: flex;
+}
+.bars{
+  display: none;
+ 
+}
+
+
+
+@keyframes slideup {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+ /* mobile devices */
+ @media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(21, 162, 209);
+  }
+  .bars{
+    display: inline;
+
+  }
+  .mobile-menu{
+    display: flex;
+    animation: slideDown 0.5s linear both;
+  }
+  .menuhide{
+    display: none;
+    animation: slideup 0.5s linear both;
+  }
+  .navsections-contact{
+    display: none !important;
+  }
+  .menubar1 ul{
+    display: block;
+  }
+  .menubar1 ul li{
+    padding-top: 10px;
+  }
+
+  .navsections{
+    display: block !important;
+  }
+  .barsmenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+  }
+  .sort-section {
+    padding: 26px;
+}
+.sort-main {
+  display: block;
+}
+.searchfeild2 {
+  position: relative;
+  left: 0 !important;
+}
+
+.searchfeild2 button {
+  padding: 13px 60px !important;
+  right: 0% !important;
+}
+.searchfeild2 input {
+
+  padding-left: 50px !important;
+  padding-top: 14px !important;
+  padding-bottom: 12px !important;
+  padding-right: 94px !important;
+
+}
+.icon-media {
+  margin: 23px 0px 10px 0px;
+}
+.title-card{
+  text-align: center;
+}
+.foot-sec2 button{
+text-align: center;
+}
+.cart-total{
+  width: auto !important;
+}
+.couponForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0px 0px 20px 0px;
+}
+.couponForm button{
+ margin-left: 0 !important;
+
+  padding: 18px 11px !important;
+  border-radius: 9px !important;
+
+}
+.couponForm input {
+  padding: 15px 0px 15px 8px !important;
+
+}
+.heading tr {
+width: 150% !important;
+padding: 0 0 !important;
+}
+.cardTable{
+  overflow-x: scroll;
+}
+.cardTable table{
+  width: 150% !important;
+}
+.bnrtext button {
+  padding: 7px 62px !important;
+
+ 
+}
+.bnrtext input {
+
+  padding: 12px 59px !important;
+  padding-top: 6px !important;
+  padding-bottom: 8px !important;
+
+}
+.arrow{
+  top: 45% !important; 
+}
+.arrow .right-arrow {
+  right: 6px !important;
+  padding: 2px 9px !important;
+
+}
+.arrow .left-arrow {
+  left: 6px !important;
+  padding: 2px 9px !important;
+
+}
+.hero-container a {
+ 
+  left: 17% !important;
+  top: 45% !important;
+
+  padding: 4px 90px !important;
+
+}
+.inputitems {
+  display: block !important; 
+ 
+}
+ }
+
+/* tablet devices */
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  body {
+    background-color: lightgreen;
+  }
+  /* .navsections-contact{
+    display: none !important;
+  } */
+  .sort-main {
+    display: block;
+  }
+}
