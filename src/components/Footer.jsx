@@ -5,6 +5,7 @@ import { faFacebookF,faTwitter,faYoutube,faLinkedinIn } from '@fortawesome/free-
 import banks from '../img/payment.png'
 const Footer = () => {
     const [search,setSearch]=useState();
+    console.log(search)
   return (
     <div className='footer'>
         <div className="container foot-sec1">
@@ -40,24 +41,24 @@ const Footer = () => {
                
                 <ul style={{listStyle:'none'}}>
                 <h3>Shop Info</h3>
-                <li><a >About Us</a></li>
-                <li><a >Conatct US</a></li>
-                <li><a >Privacy Policy</a></li>
-                <li><a >Terms & Condition</a></li>
-                <li><a >Return Policy</a></li>
-                <li><a >FAQs & Help</a></li>
+                <li><a href='#e'>About Us</a></li>
+                <li><a href='#e'>Conatct US</a></li>
+                <li><a href='#e'>Privacy Policy</a></li>
+                <li><a href='#e'>Terms & Condition</a></li>
+                <li><a href='#e'>Return Policy</a></li>
+                <li><a href='#e'>FAQs & Help</a></li>
               </ul>
               </div>
               <div className="col-lg-3">
               <h3>Account</h3>
               <div className="d-flex flex-column text-start footer-item">
                             
-                            <a className="btn-link" >My Account</a>
-                            <a className="btn-link" >Shop details</a>
-                            <a className="btn-link" >Shopping Cart</a>
-                            <a className="btn-link" >Wishlist</a>
-                            <a className="btn-link" >Order History</a>
-                            <a className="btn-link" >International Orders</a>
+                            <a href='#e'  className="btn-link" >My Account</a>
+                            <a href='#e' className="btn-link" >Shop details</a>
+                            <a href='#e' className="btn-link" >Shopping Cart</a>
+                            <a href='#e' className="btn-link" >Wishlist</a>
+                            <a href='#e' className="btn-link" >Order History</a>
+                            <a href='#e' className="btn-link" >International Orders</a>
                         </div>
               </div>
               <div className="col-lg-3">

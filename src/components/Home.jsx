@@ -1,5 +1,5 @@
 import '../components/Home.css'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import heroImg1 from '../img/hero-img-2.jpg';
 import heroImg2 from '../img/hero-img-1.png';
 import Products from '../components/Products';
@@ -22,7 +22,7 @@ const Home = ({ products,setProducts,set}) => {
         tit.push(firstElementtit);
         setImgtarget(arr[0]);
         setTittil(tit[0]);
-
+       console.log(search)
         return arr;
     }
     function addCard(id) {
@@ -58,7 +58,7 @@ const Home = ({ products,setProducts,set}) => {
                     <div className='col-md-12 col-lg-6 img-corousel'>
                         <div className='hero-container'>
                             <img src={imgtarget} alt="efew" height={"350px"} width={"500px"} className='img-fluid' />
-                            <a><h4>{titil}</h4></a>
+                            <a href='#example'><h4>{titil}</h4></a>
                             <div className='arrow'>
                                 <div className='left-arrow' onClick={() => leftShiftArray(arr)}><FontAwesomeIcon icon={faArrowLeft} /></div>
                                 <div className='right-arrow' onClick={() => rightShiftArray(arr)}><FontAwesomeIcon icon={faArrowRight} /></div>

@@ -7,7 +7,6 @@ import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link,Outlet } from 'react-router-dom';
 import { useState } from 'react';
-import Login from './Login';
 const Navbar = ({addcardCount}) => {
  const [show, setShow] = useState(false);
 
@@ -18,13 +17,13 @@ const Navbar = ({addcardCount}) => {
      
     <div className='container navsections-contact'>
             <ul className='justify-content-space-around'>
-                <li><a> 123 Street, New York</a></li>
-                <li><a >Email@Example.com</a></li>
+                <li><a href='#e'> 123 Street, New York</a></li>
+                <li><a href='#e'>Email@Example.com</a></li>
             </ul>
             <ul>
-                <li><a> 123 Street, New York</a> </li>
-                <li><a >Email@Example.com</a>  </li>
-                <li><a >Email@Example.com</a>  </li>
+                <li><a href='#e'> 123 Street, New York</a> </li>
+                <li><a href='#e'>Email@Example.com</a>  </li>
+                <li><a href='#e'>Email@Example.com</a>  </li>
             </ul>
           </div>
 
@@ -41,7 +40,7 @@ const Navbar = ({addcardCount}) => {
                </ul></div>
             <div className={`col-lg-4 col-md-6 col-sm-12 menubar2 ${show?"mobile-menu":'menuhide'}`} >
              <ul >
-                   <li className='search'><a> <FontAwesomeIcon icon={faMagnifyingGlass} /></a></li>
+                   <li className='search'><a href='#e'> <FontAwesomeIcon icon={faMagnifyingGlass} /></a></li>
                    <li className='cardCountmain'><Link to={'/card'}><FontAwesomeIcon icon={faShoppingBag} /> <span className='cardcount'>{addcardCount}</span></Link></li>
                    <li className='user'><Link to={'/siginpage'}><FontAwesomeIcon icon={faUser} /></Link></li>
                </ul>

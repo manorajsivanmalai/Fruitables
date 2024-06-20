@@ -1,6 +1,5 @@
 import '../components/BannerTitle.css';
-import Home from './Home';
-import { Link,Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const BannerTitle = (props) => {
 
     return (

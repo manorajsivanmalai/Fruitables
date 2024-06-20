@@ -4,7 +4,6 @@ import './App.css';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import BannerTitle from './components/BannerTitle.jsx';
 import ShopPage from './components/ShopPage.jsx';
 import Footer from './components/Footer.jsx';
 import ShopDetail from './components/ShopDetail.jsx';
