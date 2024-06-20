@@ -1,8 +1,8 @@
 
-import { faAppleAlt, faStar,faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faAppleAlt, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../components/SideMenuBar.css';
-import { useEffect, useState ,memo,useRef} from 'react';
+import { useEffect, useState ,memo} from 'react';
 import feature1 from '../img/featur-1.jpg'
 import feature2 from '../img/featur-2.jpg'
 import feature3 from '../img/featur-3.jpg'
@@ -104,7 +104,7 @@ console.log(prod)
                 <h3>Featured products</h3>
                 <div className='product'>
                      <div className='row'>
-                        <div className='col-lg-6'><img src={feature1} alt="loeading-feature-image" className='img-fluid'/></div>
+                        <div className='col-lg-6'><img src={feature1} alt="loeading-feature-images" className='img-fluid'/></div>
                         <div className='col-lg-6'>
                             <h6>Big Banana</h6>
                             <FontAwesomeIcon icon={faStar} />
@@ -119,7 +119,7 @@ console.log(prod)
                 
                 <div className='product'>
                      <div className='row'>
-                        <div className='col-lg-6'><img src={feature2} alt="loeading-feature-image" className='img-fluid'/></div>
+                        <div className='col-lg-6'><img src={feature2} alt="loeading-feature-images" className='img-fluid'/></div>
                         <div className='col-lg-6'>
                             <h6>Big Banana</h6>
                             <FontAwesomeIcon icon={faStar} />
@@ -134,7 +134,7 @@ console.log(prod)
                 
                 <div className='product'>
                      <div className='row'>
-                        <div className='col-lg-6'><img src={feature3} alt="loeading-feature-image" className='img-fluid'/></div>
+                        <div className='col-lg-6'><img src={feature3} alt="loeading-feature-images" className='img-fluid'/></div>
                         <div className='col-lg-6'>
                             <h6>Big Banana</h6>
                             <FontAwesomeIcon icon={faStar} />

@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import '../components/Login.css';
 const Login = ({setLoginSuccess}) => {
 const [active, setActive] = useState({
@@ -25,7 +25,7 @@ const handleSubmit=(e)=>{
 
     if(active.siginup){
            
-    fetch('http://localhost:3004/users', {
+    fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ const handleSubmit=(e)=>{
     }
     else{
  
-        fetch('http://localhost:3004/users').then((response) => response.json())
+        fetch('http://localhost:3000/users').then((response) => response.json())
           .then((data) => {
             console.log('Success:', data);
             const user = data.find(user => user.username === usersCretendial.username && user.password === usersCretendial.password);

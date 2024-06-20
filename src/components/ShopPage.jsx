@@ -7,7 +7,6 @@ import Products from './Products';
 
 import Pagination from './Pagination';
 import { useEffect, useState } from 'react';
-import { wait } from '@testing-library/user-event/dist/utils';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import BannerTitle from './BannerTitle';
 
@@ -39,9 +38,9 @@ const ShopPage = ({products,setProducts,set,addcardCount}) => {
             const handleClick =  async (e) => {
         
               if (e.target.tagName === "BUTTON") {
-                 if (e.target.value == 0 &&currentBtn!=Math.ceil(products.length/9)) {
+                 if (e.target.value === 0 &&currentBtn !== Math.ceil(products.length/9)) {
                     setCurrentBtn(prevBtn => prevBtn + 1); 
-                  } else if (e.target.value == -1 &&currentBtn!=1) {
+                  } else if (e.target.value === -1 &&currentBtn !== 1) {
                    setCurrentBtn(prevBtn => prevBtn - 1); 
                   } else if(e.target.value>0){
                   setCurrentBtn(parseInt(e.target.value)); 

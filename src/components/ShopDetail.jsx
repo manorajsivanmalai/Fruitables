@@ -54,7 +54,7 @@ const ShopDetail = ({products,setProducts,set }) => {
       content: content,
     };
 
-    const response = await fetch("http://localhost:3004/reviwes", {
+    await fetch("http://localhost:3004/reviwes", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -72,8 +72,7 @@ const ShopDetail = ({products,setProducts,set }) => {
     const star = e.target.parentElement;
   
     if (star.parentElement.parentElement.parentElement.classList.contains("corusel")) {
-      const rect =
-        star.parentElement.parentElement.parentElement.getBoundingClientRect();
+      
       const x = e.clientX ;
       if (x >0) {
         console.log(e.clientX, "odrag " + divposition);
