@@ -25,7 +25,7 @@ const ShopDetail = ({products,setProducts,set }) => {
           
           }
    useEffect(()=>{
-   axios.get("http://localhost:3000/.netlify/functions/reviwes").then((response)=>{
+   axios.get("/.netlify/functions/reviwes").then((response)=>{
     setReview(response.data);
     })
    },[review])
@@ -52,7 +52,7 @@ const ShopDetail = ({products,setProducts,set }) => {
       content: content,
     };
 
-    axios.post('http://localhost:3000/.netlify/functions/reviwes', {
+    axios.post('/.netlify/functions/reviwes', {
      newrevie
     })
     .then(function (response) {
