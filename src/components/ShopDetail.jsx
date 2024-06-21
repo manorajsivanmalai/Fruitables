@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import contactimg from "../img/avatar.jpg";
 import StarRating from "./StarRating";
 import Products from "./Products";
+import axios from "axios";
 const ShopDetail = ({products,setProducts,set }) => {
   const title = {
     title: "Shop Detail",
@@ -24,12 +25,9 @@ const ShopDetail = ({products,setProducts,set }) => {
           
           }
    useEffect(()=>{
-    fetch("http://localhost:3004/reviwes").then((response)=>{
-      return response.json();
-    }).then((data)=>{
-      setReview(data);
+   axios.get("http://localhost:3000/.netlify/functions/reviwes").then((response)=>{
+    setReview(response.data);
     })
-
    },[review])
 
 
@@ -54,13 +52,16 @@ const ShopDetail = ({products,setProducts,set }) => {
       content: content,
     };
 
-    await fetch("http://localhost:3004/reviwes", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newrevie)
+    axios.post('http://localhost:3000/.netlify/functions/reviwes', {
+     newrevie
+    })
+    .then(function (response) {
+     console.log(response.data)
+    })
+    .catch(function (error) {
+      console.log(error);
     });
+
     setName("");
     setRate(0);
     setContent("");

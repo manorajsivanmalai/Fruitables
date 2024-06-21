@@ -1,6 +1,6 @@
 import { useState } from "react";
 import '../components/Login.css';
-
+import axios from 'axios';
 const Login = ({setLoginSuccess}) => {
 const [active, setActive] = useState({
     login: true,
@@ -12,7 +12,7 @@ const [users, setUsers] = useState({
     password1: ''
 });
 
-const handleSubmit=(e)=>{
+const handleSubmit= (e)=>{
     e.preventDefault();
 
     const usersCretendial={
@@ -22,39 +22,39 @@ const handleSubmit=(e)=>{
     };
  
     if(active.siginup){
-           
-    fetch('http://localhost:3000/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(usersCretendial)
-      }).then((response) => response.json())
-      .then((data) => {
-        console.log('Success:', data);
+      axios.post('http://localhost:3000/.netlify/functions/users', {
+        username:usersCretendial.username,
+        password:usersCretendial.password,
       })
-      .catch((error) => {
-        console.error('Error:', error);
+      .then(function (response) {
+       console.log(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
       });
 
     }
     else{
- 
-        fetch('http://localhost:3000/users').then((response) => response.json())
-          .then((data) => {
-            console.log('Success:', data);
-            const user = data.find(user => user.username === usersCretendial.username && user.password === usersCretendial.password);
-            if (user) {
-                setLoginSuccess(true);
-              console.log('User found:', user);
-            } else {
-                setLoginSuccess(false);
-              console.log('User not found');
-            }
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
+      async function fetchItems() {
+        axios.get('http://localhost:3000/.netlify/functions/users')
+        .then(response => {
+          const user = response.data.find(user => user.username === usersCretendial.username && user.password === usersCretendial.password);
+          if (user) {
+              setLoginSuccess(true);
+            console.log('User found:', user);
+          } else {
+              setLoginSuccess(false);
+            console.log('User not found');
+          }
+        })
+        .catch(error => {
+          console.error('There was an error fetching the data!', error);
+        });
+      
+    
+      }
+      fetchItems();
+    
     }
 }
 
