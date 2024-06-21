@@ -28,6 +28,7 @@ const handleSubmit= (e)=>{
       })
       .then(function (response) {
        console.log(response.data)
+       setUsers('');
       })
       .catch(function (error) {
         console.log(error);
