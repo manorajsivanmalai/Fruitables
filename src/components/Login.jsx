@@ -1,6 +1,6 @@
-
 import { useState } from "react";
 import '../components/Login.css';
+
 const Login = ({setLoginSuccess}) => {
 const [active, setActive] = useState({
     login: true,
@@ -20,9 +20,7 @@ const handleSubmit=(e)=>{
         password:users.password,
         password1:users.password1
     };
-    
-   
-
+ 
     if(active.siginup){
            
     fetch('http://localhost:3000/users', {
