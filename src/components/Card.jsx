@@ -3,7 +3,7 @@ import '../components/Card.css';
 
 import { faMinus, faPlus,faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const Card = ({products,setProducts,set}) => {
 
     
@@ -16,13 +16,16 @@ const Card = ({products,setProducts,set}) => {
         subtitle2: 'Pages',
         subtitle3: 'Card'
     }
-    const totalq = products.filter((item) => item.card === true)
-    .reduce((total, item) => total + (item.price * item.quantity), 0);
-    setTotal(totalq);
- 
- const quantity = products.filter((item) => item.card === true)
-       .reduce((sum, item) => sum + item.quantity, 0);
-       set(quantity);
+
+       useEffect(()=>{
+        const totalq = products.filter((item) => item.card === true)
+        .reduce((total, item) => total + (item.price * item.quantity), 0);
+        setTotal(totalq);
+     
+     const quantity = products.filter((item) => item.card === true)
+           .reduce((sum, item) => sum + item.quantity, 0);
+           set(quantity);
+       },[set,products])
 
   const handleCoupon = (e) => {
     e.preventDefault();
