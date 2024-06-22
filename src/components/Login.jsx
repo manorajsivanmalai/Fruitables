@@ -22,6 +22,7 @@ const handleSubmit= (e)=>{
     };
  
     if(active.siginup){
+      if(usersCretendial.password===usersCretendial.password1){
       axios.post('/.netlify/functions/users', {
         username:usersCretendial.username,
         password:usersCretendial.password,
@@ -33,7 +34,10 @@ const handleSubmit= (e)=>{
       .catch(function (error) {
         console.log(error);
       });
-
+    }
+    else{
+      alert("password does not match"+usersCretendial.password)
+    }
     }
     else{
       async function fetchItems() {
