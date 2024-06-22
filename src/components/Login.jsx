@@ -23,7 +23,7 @@ const handleSubmit= (e)=>{
  
     if(active.siginup){
       if(usersCretendial.password===usersCretendial.password1){
-      axios.post('/.netlify/functions/users', {
+      axios.post('/api/users', {
         username:usersCretendial.username,
         password:usersCretendial.password,
       })
@@ -41,7 +41,7 @@ const handleSubmit= (e)=>{
     }
     else{
       async function fetchItems() {
-        axios.get('/.netlify/functions/users')
+        axios.get('/api/users')
         .then(response => {
           const user = response.data.find(user => user.username === usersCretendial.username && user.password === usersCretendial.password);
           if (user) {
