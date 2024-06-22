@@ -9,8 +9,7 @@ const pool = createPool({
 });
 
 const app = express();
-
-app.use(cors());
+console.log("kdkdkdk")
 app.use(express.json());
 
 router.get('/users', async (req, res) => {
