@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const router = express.Router();
+const serverless = require('serverless-http');
 const pool = createPool({
   connectionString:"postgres://default:oQm2pSXI5ulY@ep-patient-rain-a4vsiaah-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
 });
@@ -57,7 +58,8 @@ router.post('/reviwes', async (req, res) => {
 });
 
 app.use('/.netlify/functions', router);
- module.exports.handler = serverless(app);
+
+module.exports.handler = serverless(app);
 
 
 
