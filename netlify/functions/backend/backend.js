@@ -57,11 +57,7 @@ router.post('/reviwes', async (req, res) => {
 });
 
 app.use('/.netlify/functions', router);
-// module.exports.handler = serverless(app);
-app.listen(3000, () => {
-  console.log(`Server is running on port ${3000}`);
-});
-
+ module.exports.handler = serverless(app);
 
 
 
