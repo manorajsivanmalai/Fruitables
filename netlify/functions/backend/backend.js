@@ -12,7 +12,7 @@ const app = express();
 console.log("kdkdkdk")
 app.use(express.json());
 
-router.get('/users', async (req, res) => {
+router.get('/api/users', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM fruitableuser'); // Adjust table name if necessary
     res.json(result.rows);
@@ -22,7 +22,7 @@ router.get('/users', async (req, res) => {
   }
 });
 
-router.post('/users', async (req, res) => {
+router.post('/api/users', async (req, res) => {
   try {
     const { username, password } = req.body;
     const result = await pool.query('INSERT INTO fruitableuser(userName, password) VALUES ($1, $2)', [username, password]);
@@ -34,7 +34,7 @@ router.post('/users', async (req, res) => {
  
 });
 
-router.get('/reviwes', async (req, res) => {
+router.get('/api/reviwes', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM fruitablereviews'); // Adjust table name if necessary
     res.json(result.rows);
@@ -44,7 +44,7 @@ router.get('/reviwes', async (req, res) => {
   }
 });
 
-router.post('/reviwes', async (req, res) => {
+router.post('/api/reviwes', async (req, res) => {
   try {
     const { name, date,rate,content } = req.body.newrevie;
     const result = await pool.query('INSERT INTO fruitablereviews(name, date,rate,content) VALUES ($1, $2,$3,$4)', [name, date,rate,content]);
