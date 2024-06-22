@@ -4,10 +4,10 @@
   functions = "netlify/functions"
     publish = "build"
 
- # [[redirects]]
-  #   from = "/*"
-   # to = "/.netlify/functions/backend"
-   # status = 200
+     [[redirects]]
+       from = "/api"
+     to = "/.netlify/functions/backend"
+     status = 200
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   [[redirects]]
