@@ -11,7 +11,7 @@ const [users, setUsers] = useState({
     password: '',
     password1: ''
 });
-
+setLoginSuccess(true)
 const handleSubmit= (e)=>{
     e.preventDefault();
 
