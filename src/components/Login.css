@@ -51,3 +51,18 @@
 .ajithpool{
     height: 100vh;
 }   
+
+.skip{
+    position: relative;
+  
+}
+.btn-skip{
+position: absolute;
+right: 0;
+top: 30px;
+padding: 5px 20px 5px 20px;
+border: none;
+background-color: #81c408;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+}

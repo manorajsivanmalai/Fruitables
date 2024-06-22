@@ -74,7 +74,9 @@ const handleSubmit= (e)=>{
                     <input type="password" placeholder='Confirm Password'  value={users.password1} onChange={(e)=>setUsers({...users,password1:e.target.value})} style={{display: active.siginup ? 'block' : 'none'}}/>
                     <button type="submit">sigin Up</button>
                 </form>
-           
+                <div className="skip">
+                <button onClick={(e)=>setLoginSuccess(true)} className="btn-skip">skip</button>
+                </div>
               </div>
     </div>
  </div>
