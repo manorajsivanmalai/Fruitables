@@ -25,7 +25,7 @@ const ShopDetail = ({products,setProducts,set }) => {
           
           }
    useEffect(()=>{
-   axios.get("/.netlify/functions/reviwes").then((response)=>{
+   axios.get("/api/reviwes").then((response)=>{
     setReview(response.data);
     })
    },[review])
@@ -52,7 +52,7 @@ const ShopDetail = ({products,setProducts,set }) => {
       content: content,
     };
 
-    axios.post('/.netlify/functions/reviwes', {
+    axios.post('/api/reviwes', {
      newrevie
     })
     .then(function (response) {
