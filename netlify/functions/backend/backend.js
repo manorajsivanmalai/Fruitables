@@ -56,7 +56,7 @@ router.post('/reviwes', async (req, res) => {
  
 });
 
-app.use('/.netlify/functions/backend', router);
+app.use('/api', router);
 
 module.exports.handler = serverless(app);
 
