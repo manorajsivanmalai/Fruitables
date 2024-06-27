@@ -69,9 +69,9 @@ router.post('/reviwes', async (req, res) => {
 
 app.use('/api', router);
 
-app.listen(4000, () => console.log('Express server is running on localhost:4000'));
+// app.listen(4000, () => console.log('Express server is running on localhost:4000'));
 
-// module.exports.handler = serverless(app);
+ module.exports.handler = serverless(app);
 
 
 
