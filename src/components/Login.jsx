@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState } from "react";
 import '../components/Login.css';
 import axios from 'axios';
 const Login = ({setLoginSuccess}) => {
@@ -6,11 +6,14 @@ const [active, setActive] = useState({
     login: true,
     siginup: false
 });
+
 const [users, setUsers] = useState({
     username: '',
     password: '',
     password1: ''
 });
+
+
 setLoginSuccess(true)
 const handleSubmit= (e)=>{
     e.preventDefault();
@@ -73,7 +76,7 @@ const handleSubmit= (e)=>{
                <button onClick={() => setActive({login: false, siginup: true})}  style={{backgroundColor:active.siginup?'#81c408':'blue'}}>siginup</button>
             </div>
                <form action="" className='sigin-form' onSubmit={(e)=>handleSubmit(e)}>
-                    <input type="text" placeholder='Enter User Name'  value={users.username} onChange={(e)=>setUsers({...users,username:e.target.value})} required/>
+                    <input type="text" placeholder='Enter User Name'  value={users.username} onChange={(e)=>setUsers({...users,username:e.target.value})} required  />
                     <input type="password"  placeholder='Enter Password'  value={users.password} onChange={(e)=>setUsers({...users,password:e.target.value})} required/>
                     <input type="password" placeholder='Confirm Password'  value={users.password1} onChange={(e)=>setUsers({...users,password1:e.target.value})} style={{display: active.siginup ? 'block' : 'none'}}/>
                     <button type="submit">sigin Up</button>

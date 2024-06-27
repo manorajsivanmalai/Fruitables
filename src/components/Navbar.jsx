@@ -1,6 +1,5 @@
 import '../components/Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass,faBars } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +8,6 @@ import { Link,Outlet } from 'react-router-dom';
 import { useState } from 'react';
 const Navbar = ({addcardCount}) => {
  const [show, setShow] = useState(false);
-
 
 
     return (<>
