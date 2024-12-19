@@ -12,17 +12,6 @@ const app = express();
 console.log("kdkdkdk")
 app.use(express.json());
 
-const path = require('path');
-const fs = require('fs');
-console.log(process.cwd());
-const targetDir = path.resolve(__filename, '../../../../../../');
-console.log(targetDir);
-fs.writeFile(path.join(targetDir, 'vercel.txt'),"learn something", (err) => {
-  console.log("created");
-})
-
-
-
 router.get('/users', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM fruitableuser'); // Adjust table name if necessary
@@ -69,9 +58,7 @@ router.post('/reviwes', async (req, res) => {
 
 app.use('/api', router);
 
-// app.listen(4000, () => console.log('Express server is running on localhost:4000'));
-
- module.exports.handler = serverless(app);
+module.exports.handler = serverless(app);
 
 
 
