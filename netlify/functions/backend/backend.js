@@ -4,12 +4,12 @@ const express = require('express');
 const cors = require('cors');
 const router = express.Router();
 const serverless = require('serverless-http');
-const connectionString=process.env.PG_CONNECTION_STRING;
 const pool = createPool({
-  connectionString
+  connectionString:"postgres://default:oQm2pSXI5ulY@ep-patient-rain-a4vsiaah-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require",
 });
 
 const app = express();
+console.log("kdkdkdk")
 app.use(express.json());
 
 router.get('/users', async (req, res) => {
