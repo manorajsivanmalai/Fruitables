@@ -1,14 +1,15 @@
-import '../components/Home.css'
-import { useState } from 'react'
+import './Home.css';
+import { useContext, useState } from 'react'
 import heroImg1 from '../img/hero-img-2.jpg';
 import heroImg2 from '../img/hero-img-1.png';
-import Products from '../components/Products';
+import Products from '../components/Products.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight, faCarSide, faUserShield, faExchangeAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import { ProductContext } from '../contextapi/productcontext.js';
 
-
-const Home = ({ products,setProducts,set}) => {
+const Home = () => {
     const [search, setSearch] = useState('');
+    const {products,setProducts,setAddcardCount}=useContext(ProductContext)
     const [imgtarget, setImgtarget] = useState(heroImg1);
     const tit = ['friuts', "vegitables"];
     const [titil, setTittil] = useState(tit[0]);
@@ -26,10 +27,8 @@ const Home = ({ products,setProducts,set}) => {
         return arr;
     }
     function addCard(id) {
-        console.log(id);
-        set(prev=>prev+1);
-        setProducts(prevProducts => prevProducts.map(item => ({ ...item, card: item.id === id ? true : item.card }))) ;
-        console.log(products);
+        setAddcardCount(prev=>prev+1);
+        setProducts(prevProducts => prevProducts.map(item => ({ ...item, card: item.id === id ? true : item.card })));
     }
     function rightShiftArray(arr) {
         if (arr.length === 0) return arr;
@@ -44,7 +43,7 @@ const Home = ({ products,setProducts,set}) => {
 
   
     return (
-        <div>
+        <div className='mt-5'>
             <div className="img-banner container-fluid">
                 <div className='row' style={{ height: "100vh" }}>
                     <div className='col-md-12 col-lg-6 bnrtext'>
@@ -58,14 +57,13 @@ const Home = ({ products,setProducts,set}) => {
                     <div className='col-md-12 col-lg-6 img-corousel'>
                         <div className='hero-container'>
                             <img src={imgtarget} alt="efew" height={"350px"} width={"500px"} className='img-fluid' />
-                            <a href='#example'><h4>{titil}</h4></a>
+                            <a href='#example' style={{ textDecoration: "none",color:"#ffffff" }}><h4>{titil}</h4></a>
                             <div className='arrow'>
                                 <div className='left-arrow' onClick={() => leftShiftArray(arr)}><FontAwesomeIcon icon={faArrowLeft} /></div>
                                 <div className='right-arrow' onClick={() => rightShiftArray(arr)}><FontAwesomeIcon icon={faArrowRight} /></div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 

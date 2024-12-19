@@ -130,3 +130,29 @@ form .row {
     padding: 0px 10px;
  
 }
+@media only screen and (max-width: 768px) {
+  
+    .vegitable-categery{
+        justify-content: center;
+        display: flex ;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputitems input {
+        padding: 10px 155px 15px 13px;
+    }
+    .submitForm {
+        justify-content: center;
+        padding-top: 20px;
+    }
+    .star {
+        text-align: start;
+    }
+    .review-content{
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        padding: 20px 0px 11px 19px;
+    }
+}
+

@@ -1,15 +1,17 @@
-import "../components/ShopDetail.css";
+import "./ShopDetail.css";
 import BannerTitle from "../components/BannerTitle";
-import SideMenuBar from "./SideMenuBar";
+import SideMenuBar from "../components/SideMenuBar";
 import brocoli from "../img/single-item.jpg";
 import { faMinus, faPlus, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import contactimg from "../img/avatar.jpg";
-import StarRating from "./StarRating";
-import Products from "./Products";
+import StarRating from "../components/StarRating";
+import Products from "../components/Products";
+import { ProductContext } from "../contextapi/productcontext";
 import axios from "axios";
-const ShopDetail = ({products,setProducts,set }) => {
+const ShopDetail = () => {
+  const { products, setProducts, setAddcardCount } = useContext(ProductContext);
   const title = {
     title: "Shop Detail",
     subtitle1: "home",
@@ -17,21 +19,22 @@ const ShopDetail = ({products,setProducts,set }) => {
     subtitle3: "Shop Detail",
   };
   const [review, setReview] = useState([]);
- 
+
   function addCard(id) {
-    console.log(id);
-      set(prev=>prev+1);
-        setProducts(prevProducts => prevProducts.map(item => ({ ...item, card: item.id === id ? true : item.card,quantity:item.id===id? item.quantity+1:item.quantity}))); ;
-          
-          }
-   useEffect(()=>{
-   axios.get("/api/reviwes").then((response)=>{
-    setReview(response.data);
-    })
-   },[review])
-
-
-
+    setAddcardCount((prev) => prev + 1);
+    setProducts((prevProducts) =>
+      prevProducts.map((item) => ({
+        ...item,
+        card: item.id === id ? true : item.card,
+        quantity: item.id === id ? item.quantity + 1 : item.quantity,
+      }))
+    );
+  }
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/reviwes").then((response) => {
+      setReview(response.data);
+    });
+  }, [review]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -44,7 +47,7 @@ const ShopDetail = ({products,setProducts,set }) => {
     };
 
     const formattedDate = currentDate.toLocaleDateString("en-US", options);
-    const newrevie=  {
+    const newrevie = {
       id: review.length + 1,
       name: name,
       date: formattedDate,
@@ -52,16 +55,17 @@ const ShopDetail = ({products,setProducts,set }) => {
       content: content,
     };
 
-    axios.post('/api/reviwes', {
-     newrevie
-    })
-    .then(function (response) {
-     console.log(response.data)
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
+    axios
+      .post("/api/reviwes", {
+        newrevie,
+      })
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    setReview((prev) => [...prev, newrevie]);
     setName("");
     setRate(0);
     setContent("");
@@ -71,11 +75,14 @@ const ShopDetail = ({products,setProducts,set }) => {
   function handleDrag(e) {
     e.preventDefault();
     const star = e.target.parentElement;
-  
-    if (star.parentElement.parentElement.parentElement.classList.contains("corusel")) {
-      
-      const x = e.clientX ;
-      if (x >0) {
+
+    if (
+      star.parentElement.parentElement.parentElement.classList.contains(
+        "corusel"
+      )
+    ) {
+      const x = e.clientX;
+      if (x > 0) {
         console.log(e.clientX, "odrag " + divposition);
 
         star.parentElement.parentElement.parentElement.style.setProperty(
@@ -85,7 +92,6 @@ const ShopDetail = ({products,setProducts,set }) => {
         setDivposition(e.clientX);
       }
     }
-   
   }
 
   const [name, setName] = useState("");
@@ -106,7 +112,7 @@ const ShopDetail = ({products,setProducts,set }) => {
                   <img src={brocoli} alt="" className="img-fluid rounded" />
                 </div>
               </div>
-              <div className="col-lg-6" style={{ height: "auto !important" }}>
+              <div className="col-lg-6 vegitable-categery" style={{ height: "auto !important" }}>
                 <h2>Brocoli</h2>
                 <p>Category: Vegetables</p>
                 <p></p>
@@ -200,23 +206,23 @@ const ShopDetail = ({products,setProducts,set }) => {
                       return (
                         <div className="row review" key={item.id}>
                           <div className="col-lg-2" key={item.id}>
-                            {" "}
+                           
                             <img
                               src={contactimg}
                               alt=""
                               className="img-fluid"
-                            />{" "}
+                            />
                           </div>
-                          <div className="col-lg-10">
-                            <div key={item.id}>
+                          <div className="col-lg-10 review-content">
+                           
                               <p>{item.date}</p>
                               <div className="row">
                                 <div className="col-lg-6">
-                                  {" "}
+                              
                                   <h4>{item.name}</h4>
                                 </div>
                                 <div className="col-lg-6 star">
-                                  {" "}
+                                 
                                   {Array(5)
                                     .fill()
                                     .map((_, i) => {
@@ -240,7 +246,7 @@ const ShopDetail = ({products,setProducts,set }) => {
                                 </div>
                               </div>
                               <p>{item.content}</p>
-                            </div>
+                           
                           </div>
                         </div>
                       );
@@ -277,12 +283,10 @@ const ShopDetail = ({products,setProducts,set }) => {
                   ></textarea>
                   <div className="row">
                     <div className="col-lg-6 starRate">
-                      {" "}
-                      <label htmlFor="please rate"> Please Rate :</label>{" "}
+                      <label htmlFor="please rate"> Please Rate :</label>
                       <StarRating totalStars={5} rate={rate} set={setRate} />
                     </div>
                     <div className="col-lg-6 submitForm">
-                      {" "}
                       <input type="submit" />
                     </div>
                   </div>
@@ -292,7 +296,6 @@ const ShopDetail = ({products,setProducts,set }) => {
           </div>
 
           <div className="col-lg-4">
-            {" "}
             <SideMenuBar prod={products} price={range} set={setRange} />
           </div>
         </div>
@@ -302,8 +305,12 @@ const ShopDetail = ({products,setProducts,set }) => {
               <div className=" corusel coruselActive">
                 {products.map((product, i) => {
                   return (
-                    <div className="col-lg-3" key={i}>
-                      <Products items={product} key={product.name} addCard={addCard}/>
+                    <div className={window.innerWidth <= 768 ?"col-lg-12":"col-lg-3"} key={i}>
+                      <Products
+                        items={product}
+                        key={product.name}
+                        addCard={addCard}
+                      />
                     </div>
                   );
                 })}

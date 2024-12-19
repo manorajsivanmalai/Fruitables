@@ -1,20 +1,28 @@
-const { createPool } = require('@vercel/postgres');
-require('dotenv').config();
+
+ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const router = express.Router();
+const { createPool } = require('@vercel/postgres');
 const serverless = require('serverless-http');
-const connectionString=process.env.PG_CONNECTION_STRING;
+const connectionString=process.env.POSTGRES_URL;
+
+
 const pool = createPool({
-  connectionString
+  connectionString: connectionString,
 });
 
 const app = express();
 app.use(express.json());
+app.use(cors());
+
+app.get("/",(req,res)=>{res.json("server is running")})
 
 router.get('/users', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM fruitableuser'); // Adjust table name if necessary
+    
+    
     res.json(result.rows);
   } catch (err) {
     console.error(err.message);
@@ -56,7 +64,11 @@ router.post('/reviwes', async (req, res) => {
  
 });
 
-app.use('/api', router);
+app.use('/api/', router);
+
+// app.listen(5000, () => {
+//   console.log('Server started on port 5000');
+// });
 
 module.exports.handler = serverless(app);
 

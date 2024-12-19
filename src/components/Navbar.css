@@ -40,15 +40,20 @@
 
 .navsections{
     position: sticky;
-    top: 10px;
+    top: 0px;
+    background-color: inherit;
 }
 .search{
   
   border: solid 1px #81c408;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 50%; /* color: #81c408; */
   color: #81c408;
 
+}
+
+.search a svg{
+  font-size: 17px !important;
 }
 .menubar1 li a svg,.menubar2 li a svg{
    font-size: 23px;
@@ -125,11 +130,9 @@ display: flex;
   }
   .mobile-menu{
     display: flex;
-    animation: slideDown 0.5s linear both;
   }
   .menuhide{
     display: none;
-    animation: slideup 0.5s linear both;
   }
   .navsections-contact{
     display: none !important;
@@ -265,4 +268,10 @@ padding: 0 0 !important;
     display: block;
   }
   
+}
+
+@media only screen and (max-width: 768px) {
+  .navsections{
+    position: fixed;
+}
 }
