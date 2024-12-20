@@ -45,7 +45,7 @@ const Home = () => {
     return (
         <div className='mt-5'>
             <div className="img-banner container-fluid">
-                <div className='row' style={{ height: "100vh" }}>
+                <div className='row' style={{ height: "100vh",display:'flex',alignItems:"center",justifyContent:'center' }}>
                     <div className='col-md-12 col-lg-6 bnrtext'>
                         <h2>100% organic food</h2>
                         <h1 className="mb-5 display-3 text-primary">Organic Veggies &amp; Fruits Foods</h1>
