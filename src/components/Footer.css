@@ -109,6 +109,8 @@ transition: 0.5s;
  .footer-item{
    padding-left: 20px;
  }
- .foot-sec2 .row{
-  gap: 40px;
- }
+@media only screen and (max-width:768px){
+    .foot-sec2 .row{
+        gap: 40px;
+       }
+}
