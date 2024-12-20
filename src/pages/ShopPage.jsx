@@ -26,8 +26,8 @@ const ShopPage = () => {
   const [range, setRange] = useState(100);
 
   const showsortsection=useMemo(()=>{
-    return window.innerWidth<=768?{display:"none"}:{display:"block"};
-  },[window.innerWidth]);
+    return window.innerWidth<=768?{display:"none"}:{display:"flex"};
+  },[]);
 
   useEffect(() => {
     setSplitArray({
@@ -38,22 +38,26 @@ const ShopPage = () => {
   }, [currentBtn]);
 
   const handleClick = async (e) => {
+  
+    
     if (e.target.tagName === "BUTTON") {
+      
       if (
-        e.target.value === 0 &&
+        parseInt(e.target.value )=== 0 &&
         currentBtn !== Math.ceil(products.length / 9)
       ) {
         setCurrentBtn((prevBtn) => prevBtn + 1);
-      } else if (e.target.value === -1 && currentBtn !== 1) {
+      } else if (parseInt(e.target.value) === -1 && currentBtn !== 1) {
+      
         setCurrentBtn((prevBtn) => prevBtn - 1);
-      } else if (e.target.value > 0) {
+    
+      } else if (parseInt(e.target.value) > 0) {
         setCurrentBtn(parseInt(e.target.value));
       }
     }
   };
 
   function addCard(id) {
-    console.log(id);
     setAddcardCount((prev) => prev + 1);
     setProducts((prevProducts) =>
       prevProducts.map((item) => ({
@@ -88,8 +92,8 @@ const ShopPage = () => {
             <div className="sort-section" style={showsortsection} >
               <label>Default Sorting :</label>
               <select>
-                <option>popularity</option>
                 <option>organic</option>
+                <option>popularity</option>
                 <option>fantastic</option>
                 <option>Nothing</option>
               </select>
@@ -124,7 +128,14 @@ const ShopPage = () => {
               })}
             <div className="col-lg-12" style={{ height: "123px" }}>
               <Pagination
-                btns={products.length}
+                btns={products
+                  .filter(
+                    (pro) =>
+                      pro.name
+                        .toLocaleLowerCase()
+                        .includes(inputSearch.toLocaleLowerCase()) &&
+                      range > Math.ceil(pro.price)
+                  ).length}
                 handleClick={handleClick}
                 crnt={currentBtn}
               />

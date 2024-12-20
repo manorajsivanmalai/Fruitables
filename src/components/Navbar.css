@@ -228,27 +228,7 @@ padding: 0 0 !important;
   padding-bottom: 8px !important;
 
 }
-.arrow{
-  top: 45% !important; 
-}
-.arrow .right-arrow {
-  right: 6px !important;
-  padding: 2px 9px !important;
 
-}
-.arrow .left-arrow {
-  left: 6px !important;
-  padding: 2px 9px !important;
-
-}
-.hero-container a {
- 
-  left: 17% !important;
-  top: 45% !important;
-
-  padding: 4px 90px !important;
-
-}
 .inputitems {
   display: block !important; 
  

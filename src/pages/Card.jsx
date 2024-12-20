@@ -27,7 +27,7 @@ const Card = () => {
       .filter((item) => item.card === true)
       .reduce((total, item) => total + item.price * item.quantity, 0);
 
-    setTotal(totalq);
+      setTotal(totalq);
 
     const quantity = products
       .filter((item) => item.card === true)
@@ -42,12 +42,21 @@ const Card = () => {
     e.target.reset();
   };
   function deleteCard(id) {
-    setProducts((prevProducts) =>
-      prevProducts.map((item) => ({
-        ...item,
-        card: item.id === id ? false : item.card,
-      }))
-    );
+ 
+    setProducts((prevProducts) => {
+      const updated = prevProducts.map((item) => {
+        // Check if the id matches
+        if (item.id === id) {
+          // Return the updated item with card set to false
+          return { ...item, quantity:0 };
+        }
+        // Otherwise, return the item unchanged
+        return item;
+      });
+    
+      return updated;
+    });
+    
   }
 
   function quantityChange(id, action) {
@@ -76,7 +85,7 @@ const Card = () => {
               <td>Price</td>
               <td>Quantity</td>
               <td>Total</td>
-              <td>Handle</td>
+              <td>delete</td>
             </tr>
           </thead>
           <tbody className="heading">
@@ -99,17 +108,17 @@ const Card = () => {
                     <td> ${item.price}</td>
                     <td>
                       <div className="btn-qty">
-                        <button>
+                        <button onClick={() => quantityChange(item.id, "minus")}>
                           <FontAwesomeIcon
                             icon={faMinus}
-                            onClick={() => quantityChange(item.id, "minus")}
+                            
                           />
                         </button>
                         <span>{item.quantity}</span>
-                        <button>
+                        <button  onClick={() => quantityChange(item.id, "plus")}>
                           <FontAwesomeIcon
                             icon={faPlus}
-                            onClick={() => quantityChange(item.id, "plus")}
+                           
                           />
                         </button>
                       </div>

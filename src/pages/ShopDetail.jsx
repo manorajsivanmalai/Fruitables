@@ -83,8 +83,6 @@ const ShopDetail = () => {
     ) {
       const x = e.clientX;
       if (x > 0) {
-        console.log(e.clientX, "odrag " + divposition);
-
         star.parentElement.parentElement.parentElement.style.setProperty(
           "transform",
           `translate3d(-${divposition}px, 0px, 0px)`
@@ -299,7 +297,7 @@ const ShopDetail = () => {
             <SideMenuBar prod={products} price={range} set={setRange} />
           </div>
         </div>
-        <div className="container corusel-main">
+        <div className="container corusel-main" style={{display:window.innerWidth<=768 ?"none":"block"}}>
           <div className="slider-corusel">
             <div className="sliders" onDrag={handleDrag}>
               <div className=" corusel coruselActive">

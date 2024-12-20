@@ -1,8 +1,11 @@
 import '../components/Products.css'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 const Products = ({items,addCard}) => {
-    
-
+    const navigate=useNavigate();
+ function addtoCard(id) {
+   addCard(id);
+   navigate('/card'); 
+ }
 
   return (
     <div className='products' key={items.id}>
@@ -12,7 +15,7 @@ const Products = ({items,addCard}) => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
             <div className='products-price'>
                 <span>${items.price}/ kg</span>
-                <button><Link to="/card" onClick={(e)=>addCard(items.id)} style={{textDecoration:"none",color:"#81C408"}}>  Add to card</Link></button>
+                <button onClick={(e)=>addtoCard(items.id)}><Link   style={{textDecoration:"none",color:"#81C408"}}>  Add to card</Link></button>
             </div>
         </div>
     </div>

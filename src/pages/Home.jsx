@@ -1,11 +1,12 @@
 import './Home.css';
-import { useContext, useState } from 'react'
+import { useContext, useState ,useEffect} from 'react'
 import heroImg1 from '../img/hero-img-2.jpg';
 import heroImg2 from '../img/hero-img-1.png';
 import Products from '../components/Products.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight, faCarSide, faUserShield, faExchangeAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { ProductContext } from '../contextapi/productcontext.js';
+import { CgChevronDoubleLeftO,CgChevronDoubleRightO } from "react-icons/cg";
 
 const Home = () => {
     const [search, setSearch] = useState('');
@@ -14,7 +15,22 @@ const Home = () => {
     const tit = ['friuts', "vegitables"];
     const [titil, setTittil] = useState(tit[0]);
     const arr = [heroImg1, heroImg2];
-
+    useEffect(() => {
+        if (search.trim() !== '') {
+          // Select all elements that could contain the search text (e.g., p, div, span)
+          const elements = document.querySelectorAll('h4');
+          
+          for (let el of elements) {
+            // Check if the element's text content matches the search term
+            if (el.textContent.toLowerCase().includes(search.toLowerCase())) {
+              // Focus the first matching element and scroll it into view
+              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              el.focus(); // Ensure the element is focusable, you can add tabIndex if needed
+              break; // Stop after focusing on the first match
+            }
+          }
+        }
+      }, [search]);
     function leftShiftArray(arr) {
         if (arr.length === 0) return arr;
         const firstElement = arr.shift();
@@ -23,12 +39,17 @@ const Home = () => {
         tit.push(firstElementtit);
         setImgtarget(arr[0]);
         setTittil(tit[0]);
-       console.log(search)
         return arr;
     }
     function addCard(id) {
         setAddcardCount(prev=>prev+1);
-        setProducts(prevProducts => prevProducts.map(item => ({ ...item, card: item.id === id ? true : item.card })));
+        setProducts((prevProducts) =>
+            prevProducts.map((item) => ({
+              ...item,
+              card: item.id === id ? true : item.card,
+              quantity: item.id === id ? item.quantity + 1 : item.quantity,
+            }))
+          )
     }
     function rightShiftArray(arr) {
         if (arr.length === 0) return arr;
@@ -57,11 +78,13 @@ const Home = () => {
                     <div className='col-md-12 col-lg-6 img-corousel'>
                         <div className='hero-container'>
                             <img src={imgtarget} alt="efew" height={"350px"} width={"500px"} className='img-fluid' />
-                            <a href='#example' style={{ textDecoration: "none",color:"#ffffff" }}><h4>{titil}</h4></a>
+                            <a href='#example' style={{ textDecoration: "none",color:"#ffffff" }}><h4>{titil}</h4>
                             <div className='arrow'>
-                                <div className='left-arrow' onClick={() => leftShiftArray(arr)}><FontAwesomeIcon icon={faArrowLeft} /></div>
-                                <div className='right-arrow' onClick={() => rightShiftArray(arr)}><FontAwesomeIcon icon={faArrowRight} /></div>
+                                <div className='left-arrow' onClick={() => leftShiftArray(arr)}><CgChevronDoubleLeftO /></div>
+                                <div className='right-arrow' onClick={() => rightShiftArray(arr)}><CgChevronDoubleRightO /></div>
                             </div>
+                            </a>
+                          
                         </div>
                     </div>
                 </div>
