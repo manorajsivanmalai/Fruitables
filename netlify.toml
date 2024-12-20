@@ -1,6 +1,6 @@
 # example netlify.toml
 [build]
-  command = "npm run build"
+  command = "CI=false npm run build"
   functions = "netlify/functions"
     publish = "build"
 
@@ -14,6 +14,7 @@
     from = "/*"
     to = "/index.html"
     status = 200
+
 
 
 
